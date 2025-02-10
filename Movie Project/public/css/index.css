@@ -1,0 +1,379 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1625;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Header and Navigation */
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    background: rgba(26, 22, 37, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.logo-highlight {
+    color: #9b8f25;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 16px;
+    margin: 0 32px;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.nav-button.active {
+    background-color: #9b8f25;
+    color: white;
+}
+
+.nav-button:not(.active) {
+    color: #9ca3af;
+}
+
+.coming-soon {
+    font-size: 12px;
+    margin-left: 8px;
+    color: #6b7280;
+}
+
+.mobile-menu-btn {
+    display: none;
+    padding: 8px;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+.right-section {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.add-movie-btn {
+    background-color: #9b8f25;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.add-movie-btn:hover {
+    background-color: #8a7f20;
+}
+
+.user-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+}
+
+.user-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 40;
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 32px;
+}
+
+.mobile-nav-button {
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 20px;
+    color: #9ca3af;
+    transition: color 0.3s;
+}
+
+.mobile-nav-button.active {
+    color: white;
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 80px 16px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(26, 22, 37, 0.8), rgba(26, 22, 37, 1));
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #d1d5db;
+    margin-bottom: 32px;
+}
+
+.hero-cta {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    margin-top: 32px;
+}
+
+.carousel-content {
+    display: flex;
+    gap: 16px;
+    overflow-x: hidden;
+    padding: 16px;
+}
+
+.carousel-item {
+    min-width: 350px;
+    max-width: 384px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background-color: #4c1d95;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.carousel-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-pattern-top,
+.bg-pattern-bottom {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+}
+
+.bg-pattern-top {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    color: rgba(59, 130, 246, 0.1);
+}
+
+.bg-pattern-bottom {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+    color: rgba(239, 68, 68, 0.1);
+}
+
+.carousel-item-content {
+    position: relative;
+}
+
+.carousel-item-logo img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 24px;
+}
+
+.carousel-item-details {
+    margin-bottom: 24px;
+}
+
+.carousel-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+.carousel-item-date,
+.carousel-item-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #d1d5db;
+    margin-top: 8px;
+}
+
+.carousel-item-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-item-price {
+    color: white;
+}
+
+.carousel-item-price span {
+    font-size: 14px;
+}
+
+.carousel-item-price div {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carousel-item-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #eab308;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #ca8a04;
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-prev {
+    left: 16px;
+}
+
+.carousel-next {
+    right: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .right-section {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+}
