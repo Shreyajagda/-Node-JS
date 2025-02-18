@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        form input, form button {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        form input::placeholder {
+            color: #aaa;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        table td img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table td a button {
+            background-color: #008CBA;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        table td a button:hover {
+            background-color: #007bb5;
+        }
+
+        table td a button.delete {
+            background-color: #f44336;
+        }
+
+        table td a button.delete:hover {
+            background-color: #e53935;
+        }
+
+        .form-icon {
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 12px;
+            color: #888;
+        }
+
+        form .input-group {
+            position: relative;
+        }
+
+        form .input-group input {
+            padding-left: 40px;
+        }
+        #btn1{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Store</h1>
+
+    <form action="/addData" method="post">
+        <!-- Book Name -->
+        <div class="input-group">
+            <i class="fas fa-book form-icon"></i>
+            <input type="text" name="bookname" placeholder="Enter Book name" required>
+        </div>
+
+        <!-- Author Name -->
+        <div class="input-group">
+            <i class="fas fa-user form-icon"></i>
+            <input type="text" name="authername" placeholder="Enter Author name" required>
+        </div>
+
+        <!-- Publication Date -->
+        <div class="input-group">
+            <i class="fas fa-calendar-alt form-icon"></i>
+            <input type="date" name="date" placeholder="Enter publication date" required>
+        </div>
+
+        <!-- Book Price -->
+        <div class="input-group">
+            <i class="fas fa-dollar-sign form-icon"></i>
+            <input type="number" name="price" placeholder="Enter Book price" required>
+        </div>
+
+        <!-- Sold Books -->
+        <div class="input-group">
+            <i class="fas fa-chart-line form-icon"></i>
+            <input type="number" name="sold" placeholder="Enter sold books" required>
+        </div>
+
+        <!-- Book URL -->
+        <div class="input-group">
+            <i class="fas fa-link form-icon"></i>
+            <input type="text" name="URL" placeholder="Enter book URL" required>
+        </div>
+
+        <!-- Submit Button -->
+       &nbsp;  &nbsp; &nbsp; <button type="submit"><i class="fas fa-save" id="btn1"></i> Submit</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+    
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th>Publication Date</th>
+                <th>Price</th>
+                <th>Sold</th>
+                <th>Image</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((e, i) => { %>
+            <tr>
+                
+                <td><%= e.bookname %></td>
+                <td><%= e.authername %></td>
+                <td><%= e.date %></td>
+                <td><%= e.price %></td>
+                <td><%= e.sold %></td>
+                <td><img src="<%= e.URL %>" alt="Book Image"></td>
+                <td><a href="/editData/<%= e.id %>"><button>Edit</button></a></td>
+                <td><a href="/deleteData?id=<%= e.id %>"><button class="delete">Delete</button></a></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

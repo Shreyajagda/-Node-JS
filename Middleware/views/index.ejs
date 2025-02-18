@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Server Started</h1>
+
+    <form action="/addData" method="post">
+        <input type="text" placeholder="Enter your task" name="name">
+        <button type="submit">Submit</button>
+        <link rel="stylesheet" href="/public/style.css">
+    </form>
+
+    <table border="0" width="20%">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% todo.map((e,i)=>{ %>
+                <tr>
+                    <td><%= e.name %></td>
+                    <td>
+                        <a href="/editData/<%= e.id %>">
+                            <button>Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/deleteData?id=<%= e.id %>">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

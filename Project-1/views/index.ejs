@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-family: 'Arial', sans-serif; background-color: #f9fafb; margin: 0; padding: 0;">
+
+    <h1 style="text-align: center; color: white; padding: 20px; background: linear-gradient(90deg, #4fc3f7, #29b6f6); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        Server Started
+    </h1>
+
+
+    <form action="/addData" method="post" style="text-align: center; margin: 30px;">
+        <input type="text" placeholder="Enter your task" name="name" style="padding: 12px 15px; font-size: 16px; width: 300px; margin-right: 10px; border-radius: 25px; border: 1px solid #ddd; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <button type="submit" style="padding: 12px 25px; font-size: 16px; background-color: #ffa726; color: white; border: none; border-radius: 25px; cursor: pointer; transition: 0.3s;">
+            Submit
+        </button>
+    </form>
+
+   
+    <table border="0" width="50%" style="margin: 0 auto; border-collapse: collapse; text-align: center; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; border-radius: 10px;">
+        <thead>
+            <tr>
+                <th style="padding: 15px; background-color: #26c6da; color: white; text-transform: uppercase; font-size: 14px;">Task</th>
+                <th colspan="2" style="padding: 15px; background-color: #26c6da; color: white; text-transform: uppercase; font-size: 14px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% todo.map((e,i)=>{ %>
+                <tr style="background-color: <%= i % 2 === 0 ? '#f0f4f8' : '#e0f7fa' %>;">
+                    <td style="padding: 15px; border-bottom: 1px solid #ddd; color: #333;">
+                        <%= e.name %>
+                    </td>
+                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">
+                        <a href="/editData/<%= e.id %>">
+                            <button style="padding: 10px 20px; background-color: #66bb6a; color: white; border: none; border-radius: 20px; cursor: pointer; transition: 0.3s;">
+                                Edit
+                            </button>
+                        </a>
+                    </td>
+                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">
+                        <a href="/deleteData?id=<%= e.id %>">
+                            <button style="padding: 10px 20px; background-color: #ef5350; color: white; border: none; border-radius: 20px; cursor: pointer; transition: 0.3s;">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    
+</body>
+
+</html>

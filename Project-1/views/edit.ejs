@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-family: 'Arial', sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
+
+    <form action="/updateData" method="post" style="text-align: center; margin: 50px auto; padding: 20px; background-color: white; width: 300px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+        <input type="text" value="<%=data.id%>" hidden name="id">
+        
+        <input type="text" value="<%=data.name%>" placeholder="Enter your name" name="name" 
+            style="width: 90%; padding: 10px; margin: 10px 0; font-size: 14px; border-radius: 6px; border: 1px solid #ddd; outline: none; transition: border-color 0.3s; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);">
+        
+        <button type="submit" 
+            style="width: 90%; padding: 10px; font-size: 14px; background: linear-gradient(90deg, #64b5f6, #42a5f5); color: white; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Update
+        </button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+
+    <form action="/updateData" method="post" class="form-container">
+        <input type="text" value="<%=data.id%>" hidden name="id">
+
+        <input type="text" value="<%=data.name%>" placeholder="Enter your name" name="name" class="input-field">
+
+        <button type="submit" class="submit-button">Update</button>
+    </form>
+
+</body>
+
+</html>
