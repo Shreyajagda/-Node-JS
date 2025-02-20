@@ -8,6 +8,7 @@ const Schema = mongoose.Schema({
         type: String,
         required: true,
     },
+    
 })
 
 const schema = mongoose.model("data",Schema)

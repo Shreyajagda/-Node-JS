@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,3 +198,204 @@
     </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef1f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .table-container {
+            flex: 2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        form .input-group {
+            margin-bottom: 20px;
+        }
+
+        form input, form button {
+            width: 90%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        form input::placeholder {
+            color: #999;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            left: 10px;
+            position: relative;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        table thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        table td img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table td a button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        table td a button:hover {
+            background-color: #218838;
+        }
+
+        table td a button.delete {
+            background-color: #dc3545;
+        }
+
+        table td a button.delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Book Store</h1>
+            <form action="/addData" method="post">
+                <div class="input-group">
+                    <input type="text" name="bookname" placeholder="Enter Book name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="authername" placeholder="Enter Author name" required>
+                </div>
+                <div class="input-group">
+                    <input type="date" name="date" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="price" placeholder="Enter Book price" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="sold" placeholder="Enter sold books" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="URL" placeholder="Enter book URL" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Book Name</th>
+                        <th>Author Name</th>
+                        <th>Publication Date</th>
+                        <th>Price</th>
+                        <th>Sold</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.map((e, i) => { %>
+                    <tr>
+                        <td><img src="<%= e.URL %>" alt="Book Image"></td>
+                        <td><%= e.bookname %></td>
+                        <td><%= e.authername %></td>
+                        <td><%= e.date %></td>
+                        <td><%= e.price %></td>
+                        <td><%= e.sold %></td>
+                        <td><a href="/editData/<%= e.id %>"><button>Edit</button></a></td>
+                        <td><a href="/deleteData?id=<%= e.id %>"><button class="delete">Delete</button></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> 15e51b8acef279cba758795405fe4e8abb8d5a92

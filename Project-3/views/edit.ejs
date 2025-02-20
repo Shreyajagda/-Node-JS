@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,3 +130,136 @@
   </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Book Data</title>
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eef1f7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 12px;
+      background-color: #f9f9f9;
+    }
+
+    .form-group i {
+      margin-right: 10px;
+      color: #888;
+    }
+
+    .form-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      background-color: transparent;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Update Book Data</h2>
+    <form action="/updateData" method="post">
+      <!-- ID (hidden input) -->
+      <div class="form-group" hidden>
+        <input type="text" value="<%= data.id %>" name="id" placeholder="id" >
+      </div>
+      
+      <!-- Book Name -->
+      <div class="form-group">
+        <i class="fas fa-book"></i>
+        <input type="text" value="<%= data.bookname %>" name="bookname" placeholder="Enter book name" required>
+      </div>
+      
+      <!-- Author Name -->
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" value="<%= data.authername %>" name="authername" placeholder="Enter Author name" required>
+      </div>
+      
+      <!-- Publication Date -->
+      <div class="form-group">
+        <i class="fas fa-calendar-alt"></i>
+        <input type="text" value="<%= data.date %>" name="date" placeholder="Enter publication date" required>
+      </div>
+      
+      <!-- Book Price -->
+      <div class="form-group">
+        <i class="fas fa-dollar-sign"></i>
+        <input type="number" value="<%= data.price %>" name="price" placeholder="Enter Book price" required>
+      </div>
+      
+      <!-- Sold Books -->
+      <div class="form-group">
+        <i class="fas fa-chart-line"></i>
+        <input type="number" value="<%= data.sold %>" name="sold" placeholder="Enter sold books" required>
+      </div>
+      
+      <!-- Book URL -->
+      <div class="form-group">
+        <i class="fas fa-link"></i>
+        <input type="text" value="<%= data.URL %>" name="URL" placeholder="Enter book URL">
+      </div>
+      
+      <!-- Submit Button -->
+      <button type="submit"><i class="fas fa-save"></i> Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+>>>>>>> 15e51b8acef279cba758795405fe4e8abb8d5a92

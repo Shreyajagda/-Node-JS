@@ -34,6 +34,7 @@ app.get("/editData/:id", async(req, res) => {
    let data = await schema.findById(req.params.id);
    res.render("edit",{data})
 })
+
 app.post("/updateData", async (req, res) => {
     await schema.findByIdAndUpdate(req.body.id, req.body).then(() => {
         res.redirect("/");
