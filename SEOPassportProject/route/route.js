@@ -23,4 +23,5 @@ route.get('/adminTable', ctl.adminTable)
 route.get('/adminDelete/:id', ctl.adminDelete)
 route.get('/adminEdit/:id', ctl.adminEdit)
 route.post('/adminUpdate', upload, ctl.adminUpdate)
+
 module.exports = route

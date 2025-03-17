@@ -9,6 +9,7 @@ const session = require("express-session")
 app.set('view engine', 'ejs')
 app.use(express.urlencoded())
 app.use(cookie())
+
 const db = require('./config/dataBase');
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/upload', express.static(path.join(__dirname, 'upload')))
@@ -16,15 +17,15 @@ app.use('/upload', express.static(path.join(__dirname, 'upload')))
 
 app.use(
   session({
-    name:"local",
-    secret:"rnw",
-    resave:true,
-    saveUninitialized:false,
-    cookie:{maxAge: 100* 100* 60},
+    name: "local",
+    secret: "rnw",
+    resave: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 20 * 1000 },
   })
 );
 
-app.use(passport.initialize());  
+app.use(passport.initialize());
 
 app.use(passport.session());
 

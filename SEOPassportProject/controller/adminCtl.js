@@ -24,8 +24,8 @@ module.exports.logout = (req, res) => {
 }
 
 module.exports.dashBoard = (req, res) => {
-  // req.cookies.adminData ? res.render('dashBoard') : res.redirect('/')
-  res.render('dashBoard')
+  req.cookies.adminData ? res.render('dashBoard') : res.redirect('/')
+  // res.render('dashBoard')
 }
 
 module.exports.adminForm = (req, res) => {
